@@ -45,17 +45,17 @@ public class Installer.DiskView : AbstractInstallerView {
 
         /*var install_image = new Gtk.Image.from_icon_name ("system-os-installer", Gtk.IconSize.DIALOG);*/
         var install_image = new Gtk.Image.from_file  ("/home/ian/Documents/Pop/installer/data/img/initial-setup_drive-selection_scaled.png");
-        install_image.set_pixel_size (128);
-        install_image.valign = Gtk.Align.CENTER;
 
         var install_label = new Gtk.Label (_("Select a drive to use for installation"));
         install_label.hexpand = true;
+        install_label.justify = Gtk.Justification.CENTER;
         install_label.halign = Gtk.Align.CENTER;
         install_label.get_style_context ().add_class ("h2");
         install_label.xalign = 0;
 
         var install_desc_label = new Gtk.Label (_("This will erase all data on the selected drive. If you have not backed your data up, you can cancel the installation and use Demo Mode."));
         install_desc_label.hexpand = true;
+        install_desc_label.justify = Gtk.Justification.CENTER;
         install_desc_label.halign = Gtk.Align.CENTER;
         install_desc_label.max_width_chars = 60;
         install_desc_label.wrap = true;
