@@ -38,6 +38,7 @@ public class Installer.DecryptMenu: Gtk.Popover {
 
     private void create_decrypt_view (string device_path, DecryptFn decrypt) {
         pass_entry = new Gtk.Entry ();
+        pass_entry.input_purpose = Gtk.InputPurpose.PASSWORD;
         pass_entry.placeholder_text = "Password";
         pass_entry.changed.connect (() => set_sensitivity ());
         pass_entry.activate.connect (() => {
@@ -59,8 +60,6 @@ public class Installer.DecryptMenu: Gtk.Popover {
         decrypt_button.clicked.connect (() => {
             decrypt (device_path, pv_entry.get_text (), pass_entry.get_text (), this);
         });
-
-
 
         decrypt_view = new Gtk.Box (Gtk.Orientation.VERTICAL, 6);
         decrypt_view.add(pass_entry);
